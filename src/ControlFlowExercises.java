@@ -1,12 +1,8 @@
 public class ControlFlowExercises {
     public static void main(String[] args) {
-        long i = 2;
-        do {//statements
-            System.out.println(i);
-            i *= i;
-
-        } while (i < 1000000);//condition goes in parenthesis.
-
+    for (int i = 0; i <= 100; i+=2){
+        System.out.println(i);
+        }
     }
 }
 //    Do While
