@@ -28,7 +28,7 @@ public class ConsoleExercises {
 
         double pi = 3.14159;
 
-                System.out.format("The value of pi is approximately %.2f", pi);
+                System.out.format("The value of pi is approximately %.2f%n", pi);
 
                 Scanner scanner = new Scanner(System.in);
 
@@ -36,11 +36,47 @@ public class ConsoleExercises {
 //        int userNumber = scanner.nextInt();
 //        System.out.println("You entered: --> \"" + userNumber + "\" <--");
 
-        System.out.print("Enter three words");
-        String userString = scanner.next();
-        String words = userString.split(" ");
+//        System.out.print("Enter three words");
+//        String word1 = scanner.next();
+//        String word2 = scanner.next();
+//        String word3 = scanner.next();
+//        System.out.println(word1);
+//        System.out.println(word2);
+//        System.out.println(word3);
+//
+//
+//        System.out.print("Enter your sentence: ");
+//        String sentence = scanner.nextLine();
+//        System.out.printf("Your sentence is: %s%n ",sentence);
+//        System.out.format("Enter your sentence: ");
 
-        System.out.println("You entered:\n" + userInput1 + "\n" + userInput2 + "\n" + userInput3);
+//boolean bool1 = false;
+//boolean bool2 = true;
+
+//        System.out.println(bool1 && bool2);
+//        System.out.println((bool1 && bool2) || (bool1 && bool2));
+//        System.out.println((bool1 && bool2) || ((bool1 || bool2) || bool1 && bool1 && bool2) || (bool1 || bool2) && (bool1 && bool2) || ((bool1 || bool2) || bool1 && bool1 && bool2) || (bool1 || bool2));
+//        boolean iLikeDoughnuts = true; // of course
+//        boolean dayIsSunday = false; // I get doughnuts most Sundays
+//        double time = 8.5;  // before 9:30
+//        boolean krispyKreme = (iLikeDoughnuts && dayIsSunday && time < 9.5);
+//        System.out.println(krispyKreme);
+
+
+        boolean someCondition = false;
+        boolean someOtherCondition = true;
+
+        if (someCondition) {
+            // executes if someCondition is true
+        } else if (someOtherCondition) {
+            // executes if someOtherCondition is true *and* all of the previous ifs in
+            // this block were false
+        } else {
+            // executes if none of the conditions checked in this block were true
+        }
+
+
+
 
 
 
