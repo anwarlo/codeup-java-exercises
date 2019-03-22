@@ -1,17 +1,23 @@
+import java.util.Scanner;
+
 public class ControlFlowExercises {
     public static void main(String[] args) {
-        int num = 100;
-        for (int i = 1; i <= num; i++) {
 
-            if (i % 5 == 0 && i % 3 == 0)
-                System.out.println("FizzBuzz");
-            else if (i % 5 == 0)
-                System.out.println("Buzz");
-            else if (i % 3 == 0)
-                System.out.println("Fizz");
-            else
-                System.out.println(i);
+        Scanner numScan = new Scanner(System.in);
+        System.out.println("What number would you like to go to?");
+        int num = numScan.nextInt();
+        System.out.println("Here is your table!%n");
+        System.out.println("number | squared | cubed%n");
+        System.out.println("------ | ------- | -----%n");
+    for (int i = 1; i <= num; i++) {
+int squared = (num *= num);
+int cubed = squared *= num;
+int digits = Integer.toString(squared).length();
 
+if (digits <= 1)
+        System.out.println(num + "      | " + squared + "       | " + cubed + "%n");
+else
+    System.out.println(num + "      | " + squared + "       | " + cubed + "%n");
         }
     }
 }
