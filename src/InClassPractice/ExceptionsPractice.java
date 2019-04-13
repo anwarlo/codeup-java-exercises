@@ -11,7 +11,7 @@ public class ExceptionsPractice {
     try {
         if (i < 0 || i >= words.length){
             //array index is out of bounds!!
-            throw new Exception("Array index is out bounds\n");
+            throw new Exception("Array index is out bounds");
         }
         System.out.printf("Here we are in the danger zone!!%n");
         System.out.println(words[i]);
@@ -23,6 +23,9 @@ public class ExceptionsPractice {
     catch (Exception e){
         System.out.printf("We are catching our exceptions%n");
         System.out.println(e);
+
+    } finally {
+        System.out.println("This will always run.");
     }
         System.out.println("Here we are at the end of our program");
     }

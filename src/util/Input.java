@@ -4,59 +4,75 @@ import java.util.Scanner;
 
 public class Input {
 
-    private Scanner scanner = new Scanner(System.in);
+    private Scanner sc;
 
-
-
-    public String getString(String string){
-        return string;
+    public Input() {
+        this.sc = new Scanner(System.in);
     }
 
-    public boolean yesNo(String string){
-        scanner.nextBoolean();
-        if (string.toLowerCase().equals("y") || string.toLowerCase().equals("yes"))
-            return true;
-        else
-            return false;
+    public String getString() {
+        return sc.nextLine();
+    }
+    public boolean yesNo() {
+        String result = sc.next();
+        return result.equalsIgnoreCase("y") || result.equalsIgnoreCase("yes");
+    }
+    public int getInt() {
+        System.out.println("Enter an Integer:");
+        Integer num;
+        String input = sc.nextLine();
+
+    try {
+        num = Integer.valueOf(input);
+        System.out.println("You have entered an integer");
+    }
+    catch (NumberFormatException e) {
+        num = getInt();
+    }
+    return num;
     }
 
-    public int  getInt(int min, int max){
-        int output;
-        while(!scanner.hasNextInt()){
-            System.out.printf("Invalid input. Enter a valid integer between %d and %d: ", min, max);
-            scanner.next();
+
+    int getInt(int min, int max) {
+        System.out.println("Enter an Integer:");
+        int userInt = getInt();
+        if (userInt >= min && userInt <= max) {
+            return userInt;
         }
-        output =scanner.nextInt();
-        if(output < min || output > max) {
-            System.out.printf("Invalid range. Enter a valid integer between %d and %d: ", min, max);
-            return getInt(min, max);
+        sc.next();
+        return getInt(min, max);
+    }
+
+    public double getDouble() {
+        if (sc.hasNextDouble()) {
+            return sc.nextDouble();
         }
-        return output;
+        sc.next();
+        return getDouble();
     }
 
-    public int getInt(){
-        return getInt(1,10);
-    }
-
-    public double getDouble(double min, double max){
-        double output;
-
-        while(!scanner.hasNextDouble()){
-            System.out.printf("Invalid input. Enter a valid integer between %d and %d: ", min, max);
-            scanner.next();
+    double getDouble(double min, double max) {
+        double userDouble = getDouble();
+        if (userDouble >= min && userDouble <= max) {
+            return userDouble;
         }
-        output =scanner.nextDouble();
-        if(output < min || output > max) {
-            System.out.printf("Invalid range. Enter a valid integer between %d and %d: ", min, max);
-            return getDouble(min, max);
-        }
-        return output;
+        sc.next();
+        return getDouble(min, max);
     }
 
+    public static void main(String[] args) {
+//        Input in = new Input();
 
-    double getDouble(){
-return getDouble(1,10);
+//        System.out.println(in.getString());
+//        System.out.println("Enter yes or no [y/n]");
+//        System.out.println(in.yesNo());
+//
+//        System.out.println(in.getInt(2, 4));
+
+
+                Input test = new Input();
+
+        test.getInt();
     }
-
 
 }
